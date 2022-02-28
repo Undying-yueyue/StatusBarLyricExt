@@ -11,18 +11,19 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.widget.Switch;
 import android.widget.Toolbar;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.SwitchPreference;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import com.android.settingslib.widget.MainSwitchPreference;
+import com.android.settingslib.widget.OnMainSwitchChangeListener;
 import com.miku.statuslyricext.misc.Constants;
 
 public class SettingsActivity extends FragmentActivity {
@@ -87,17 +88,17 @@ public class SettingsActivity extends FragmentActivity {
         return versionName;
     }
 
-    public static class SettingsFragment extends PreferenceFragmentCompat implements Preference.OnPreferenceClickListener {
+    public static class SettingsFragment extends PreferenceFragmentCompat implements Preference.OnPreferenceClickListener , OnMainSwitchChangeListener {
 
         private MainSwitchPreference mEnabledPreference;
 
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
             setPreferencesFromResource(R.xml.root_preferences, rootKey);
-            mEnabledPreference = findPreference(Constants.PREFERENCE_KEY_ENABLED);
+            mEnabledPreference = (MainSwitchPreference)findPreference(Constants.PREFERENCE_KEY_ENABLED);
             if (mEnabledPreference != null) {
+                mEnabledPreference.addOnSwitchChangeListener(this);
                 mEnabledPreference.setChecked(isNotificationListenerEnabled(getContext()));
-                mEnabledPreference.setOnPreferenceClickListener(this);
             }
             Preference appInfoPreference = findPreference("app");
             if (appInfoPreference != null) {
@@ -122,16 +123,17 @@ public class SettingsActivity extends FragmentActivity {
 
         @Override
         public boolean onPreferenceClick(Preference preference) {
-            if (preference == mEnabledPreference) {
-                startActivity(new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"));
-            } else {
-                String url = mUrlMap.get(preference.getKey());
-                if (TextUtils.isEmpty(url)) return false;
-                Uri uri = Uri.parse(url);
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-            }
+            String url = mUrlMap.get(preference.getKey());
+            if (TextUtils.isEmpty(url)) return false;
+            Uri uri = Uri.parse(url);
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
             return true;
+        }
+
+        @Override
+        public void onSwitchChanged(Switch switchView, boolean isChecked) {
+            startActivity(new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"));
         }
     }
 }
