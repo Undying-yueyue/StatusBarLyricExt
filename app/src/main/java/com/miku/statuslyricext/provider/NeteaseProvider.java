@@ -1,4 +1,4 @@
-package io.cjybyjk.statuslyricext.provider;
+package com.miku.statuslyricext.provider;
 
 import android.media.MediaMetadata;
 import android.util.Pair;
@@ -10,8 +10,8 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.Locale;
 
-import io.cjybyjk.statuslyricext.provider.utils.HttpRequestUtil;
-import io.cjybyjk.statuslyricext.provider.utils.LyricSearchUtil;
+import com.miku.statuslyricext.provider.utils.HttpRequestUtil;
+import com.miku.statuslyricext.provider.utils.LyricSearchUtil;
 
 public class NeteaseProvider implements ILrcProvider {
 

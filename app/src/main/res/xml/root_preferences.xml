@@ -5,7 +5,7 @@
         <SwitchPreference
             android:key="enabled"
             android:title="@string/enabled_title" />
-        <io.cjybyjk.statuslyricext.preferences.PackageListPreference
+        <com.miku.statuslyricext.preferences.PackageListPreference
             android:title="@string/ignored_apps_title"
             android:key="ignored_packages"
             android:dependency="enabled" />

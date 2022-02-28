@@ -1,4 +1,4 @@
-package io.cjybyjk.statuslyricext;
+package com.miku.statuslyricext;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -21,7 +21,7 @@ import androidx.preference.SwitchPreference;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.cjybyjk.statuslyricext.misc.Constants;
+import com.miku.statuslyricext.misc.Constants;
 
 public class SettingsActivity extends FragmentActivity {
 

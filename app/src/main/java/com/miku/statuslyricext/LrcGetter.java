@@ -1,4 +1,4 @@
-package io.cjybyjk.statuslyricext;
+package com.miku.statuslyricext;
 
 import android.content.Context;
 import android.media.MediaMetadata;
@@ -11,11 +11,11 @@ import java.security.NoSuchAlgorithmException;
 
 import cn.zhaiyifan.lyric.LyricUtils;
 import cn.zhaiyifan.lyric.model.Lyric;
-import io.cjybyjk.statuslyricext.provider.ILrcProvider;
-import io.cjybyjk.statuslyricext.provider.KugouProvider;
-import io.cjybyjk.statuslyricext.provider.NeteaseProvider;
-import io.cjybyjk.statuslyricext.provider.QQMusicProvider;
-import io.cjybyjk.statuslyricext.provider.utils.LyricSearchUtil;
+import com.miku.statuslyricext.provider.ILrcProvider;
+import com.miku.statuslyricext.provider.KugouProvider;
+import com.miku.statuslyricext.provider.NeteaseProvider;
+import com.miku.statuslyricext.provider.QQMusicProvider;
+import com.miku.statuslyricext.provider.utils.LyricSearchUtil;
 
 public class LrcGetter {
 

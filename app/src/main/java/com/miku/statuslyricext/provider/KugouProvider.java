@@ -1,4 +1,4 @@
-package io.cjybyjk.statuslyricext.provider;
+package com.miku.statuslyricext.provider;
 
 import android.media.MediaMetadata;
 
@@ -12,8 +12,8 @@ import java.util.Locale;
 import android.util.Base64;
 import android.util.Pair;
 
-import io.cjybyjk.statuslyricext.provider.utils.HttpRequestUtil;
-import io.cjybyjk.statuslyricext.provider.utils.LyricSearchUtil;
+import com.miku.statuslyricext.provider.utils.HttpRequestUtil;
+import com.miku.statuslyricext.provider.utils.LyricSearchUtil;
 
 public class KugouProvider implements ILrcProvider {
 

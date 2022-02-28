@@ -1,6 +1,6 @@
-package io.cjybyjk.statuslyricext;
+package com.miku.statuslyricext;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import static org.junit.Assert.*;
 
