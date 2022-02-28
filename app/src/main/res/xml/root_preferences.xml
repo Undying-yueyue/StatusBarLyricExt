@@ -3,15 +3,14 @@
     android:title="@string/app_name">
 
 
-    <PreferenceCategory android:title="@string/preferences_header">
-        <SwitchPreference
-            android:key="enabled"
-            android:title="@string/enabled_title" />
-        <com.miku.statuslyricext.preferences.PackageListPreference
-            android:title="@string/ignored_apps_title"
-            android:key="ignored_packages"
-            android:dependency="enabled" />
-    </PreferenceCategory>
+    <com.android.settingslib.widget.MainSwitchPreference
+        android:key="enabled"
+        android:title="@string/enabled_title" />
+
+    <com.miku.statuslyricext.preferences.PackageListPreference
+        android:title="@string/ignored_apps_title"
+        android:key="ignored_packages"
+        android:dependency="enabled" />
 
     <PreferenceCategory android:title="@string/about_header"
         android:key="about">

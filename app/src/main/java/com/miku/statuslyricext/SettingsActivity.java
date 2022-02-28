@@ -22,6 +22,7 @@ import androidx.preference.SwitchPreference;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.android.settingslib.widget.MainSwitchPreference;
 import com.miku.statuslyricext.misc.Constants;
 
 public class SettingsActivity extends FragmentActivity {
@@ -88,7 +89,7 @@ public class SettingsActivity extends FragmentActivity {
 
     public static class SettingsFragment extends PreferenceFragmentCompat implements Preference.OnPreferenceClickListener {
 
-        private SwitchPreference mEnabledPreference;
+        private MainSwitchPreference mEnabledPreference;
 
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
